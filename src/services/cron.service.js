@@ -21,12 +21,12 @@ class Schedule {
 			const suscriptionsGetted = await suscriptionsService.getAll();
 
 			console.log(suscriptionsGetted);
+
 			const suscriptionsFormatted = await suscriptionsGetted.map(
 				({ name, email, createdAt }) => {
 					return { Nombre: name, Email: email, Creación: createdAt };
 				}
 			);
-			console.log(suscriptionsFormatted);
 
 			const bufferFile = await xlsxService.convertJsonToExcel(
 				suscriptionsFormatted,
@@ -52,8 +52,6 @@ class Schedule {
 				],
 				to: process.env.ADMIN_EMAIL,
 			});
-
-			console.log(info);
 
 			if (info) {
 				console.log(
