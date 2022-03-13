@@ -1,6 +1,4 @@
 import Head from "next/head";
-import axios from "axios";
-import { useEffect } from "react";
 
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,10 +6,6 @@ import Header from "./Header";
 import { MenuContextProvider } from "../../contexts/MenuContext";
 
 const AppLayout = ({ children }) => {
-	useEffect(async () => {
-		await axios.get("/api/cron");
-	}, []);
-
 	return (
 		<>
 			<Head>
