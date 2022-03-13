@@ -9,7 +9,7 @@
 		"next:lint": "next lint",
 		"next:slicemachine": "start-slicemachine",
 		"start": "yarn next:start",
-		"build": "yarn next:build",
+		"build": "yarn next:commonBuild",
 		"dev": "yarn next:dev"
 	},
 	"dependencies": {
