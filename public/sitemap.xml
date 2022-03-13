@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/enamoramiento-y-realidad</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/como-crear-tension-sexual</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/respeto-vs-miedo-a-expresarse-miedo-a-ser</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/las-5-fallas-mas-importantes-de-los-hombres-al-atraer-a-una-mujer</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/no-les-creas-nada</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/blog/identidad-estatus-y-comportamientos-parasitos</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/programas/desafio-30-dias</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/programas/date-coach</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://actitud-ases-server.herokuapp.com/programas/desafio-90-dias</loc>
+  <lastmod>2021-11-15T04:17:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://actitud-ases-server.herokuapp.com/sitemap.xml

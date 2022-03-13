@@ -1,0 +1,9 @@
+/* SITE INFORMATION */
+
+	Site name:  	Actitud Ases
+	Site URL:   	https://actitud-ases-server.herokuapp.com/
+	Web develop:	Agustín Andreacchi
+	Contact:    	https://dhaweb.com/contact/
+	Location:   	Argentina
+	Built with: 	NextJS
+	Launched:   	2021
