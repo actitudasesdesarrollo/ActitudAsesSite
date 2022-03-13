@@ -7,10 +7,10 @@ export default class Schedule {
 		this.initSchedule();
 	}
 
-	async initSchedule() {
+	initSchedule() {
 		if (!initializated) {
 			this.state = "Cron init";
-			await cron.schedule("* * * * *", async () => {
+			cron.schedule("* * * * *", async () => {
 				try {
 					console.log(
 						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
