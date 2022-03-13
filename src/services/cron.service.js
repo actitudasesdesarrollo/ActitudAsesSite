@@ -1,13 +1,9 @@
 import emoji from "node-emoji";
 import { resolve } from "path";
 
-import xlsxService from "../src/services/xlsx.service.js";
-import suscriptionsService from "../src/services/suscriptions.service.js";
-import { suscriptionMailer } from "../src/services/mail.service.js";
-
-import DBConnect from "../classes/DBConnect.js";
-
-new DBConnect();
+import xlsxService from "./xlsx.service.js";
+import suscriptionsService from "./suscriptions.service.js";
+import { suscriptionMailer } from "./mail.service.js";
 
 let scheduleInstance;
 class Schedule {
@@ -74,15 +70,13 @@ class Schedule {
 }
 
 function getInstance() {
-	return new Promise((resolve) => {
-		if (!scheduleInstance) {
-			scheduleInstance = new Schedule();
-			resolve({ message: "First time", instance: scheduleInstance });
-		} else {
-			scheduleInstance.task();
-			resolve({ message: "Not first time", instance: scheduleInstance });
-		}
-	});
+	if (!scheduleInstance) {
+		scheduleInstance = new Schedule();
+		return { message: "First time", instance: scheduleInstance };
+	} else {
+		scheduleInstance.task();
+		return { message: "Not first time", instance: scheduleInstance };
+	}
 }
 
 export default getInstance;
