@@ -8,6 +8,7 @@ class Schedule {
 	}
 
 	initSchedule() {
+		console.log("schedule initializated");
 		cron.schedule("* * * * *", async () => {
 			try {
 				console.log(
