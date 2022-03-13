@@ -12,6 +12,11 @@ export default class Schedule {
 			this.state = "Cron init";
 			await cron.schedule("* * * * *", async () => {
 				try {
+					console.log(
+						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
+							process.env.PORT ? `:${process.env.PORT}` : ""
+						}/api/suscriptions`
+					);
 					const { data: suscriptionsGetted } = await axios.get(
 						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
 							process.env.PORT ? `:${process.env.PORT}` : ""
