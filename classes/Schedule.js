@@ -21,7 +21,9 @@ class Schedule {
 	}
 
 	async task() {
+		console.log("task 0");
 		try {
+			console.log("task");
 			const suscriptionsGetted = await suscriptionsService.getAll();
 
 			const suscriptionsFormatted = await suscriptionsGetted.map(
@@ -29,6 +31,7 @@ class Schedule {
 					return { Nombre: name, Email: email, Creación: createdAt };
 				}
 			);
+			console.log(suscriptionsFormatted);
 
 			const bufferFile = await xlsxService.convertJsonToExcel(
 				suscriptionsFormatted,
@@ -54,6 +57,8 @@ class Schedule {
 				],
 				to: process.env.ADMIN_EMAIL,
 			});
+
+			console.log(info);
 
 			if (info) {
 				console.log(
