@@ -1,56 +1,62 @@
 import cron from "node-cron";
 import axios from "axios";
 
-let initializated;
-export default class Schedule {
+let scheduleInstance;
+class Schedule {
 	constructor() {
 		this.initSchedule();
 	}
 
 	initSchedule() {
-		if (!initializated) {
-			this.state = "Cron init";
-			cron.schedule("* * * * *", async () => {
-				try {
-					console.log(
-						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
-							process.env.PORT ? `:${process.env.PORT}` : ""
-						}/api/suscriptions`
-					);
-					const { data: suscriptionsGetted } = await axios.get(
-						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
-							process.env.PORT ? `:${process.env.PORT}` : ""
-						}/api/suscriptions`
-					);
-					const suscriptionsFormatted = await suscriptionsGetted.map(
-						({ name, email, createdAt }) => {
-							return { Nombre: name, Email: email, Creación: createdAt };
-						}
-					);
+		cron.schedule("* * * * *", async () => {
+			try {
+				console.log(
+					`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
+						process.env.PORT ? `:${process.env.PORT}` : ""
+					}/api/suscriptions`
+				);
+				const { data: suscriptionsGetted } = await axios.get(
+					`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
+						process.env.PORT ? `:${process.env.PORT}` : ""
+					}/api/suscriptions`
+				);
+				const suscriptionsFormatted = await suscriptionsGetted.map(
+					({ name, email, createdAt }) => {
+						return { Nombre: name, Email: email, Creación: createdAt };
+					}
+				);
 
-					const { data: bufferFile } = await axios.post(
-						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
-							process.env.PORT ? `:${process.env.PORT}` : ""
-						}/api/xlsx`,
-						suscriptionsFormatted
-					);
+				const { data: bufferFile } = await axios.post(
+					`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
+						process.env.PORT ? `:${process.env.PORT}` : ""
+					}/api/xlsx`,
+					suscriptionsFormatted
+				);
 
-					await axios.post(
-						`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
-							process.env.PORT ? `:${process.env.PORT}` : ""
-						}/api/mail/suscriptions`,
-						{
-							file: bufferFile,
-						}
-					);
-				} catch (error) {
-					console.log(error.message);
-				}
-			});
-		} else {
-			this.state = "Cron already init";
-		}
+				await axios.post(
+					`${process.env.HOST || process.env.NEXT_PUBLIC_VERCEL_URL}${
+						process.env.PORT ? `:${process.env.PORT}` : ""
+					}/api/mail/suscriptions`,
+					{
+						file: bufferFile,
+					}
+				);
+			} catch (error) {
+				console.log(error.message);
+			}
+		});
+	}
 
-		initializated = true;
+	initializated = true;
+}
+
+function getInstance() {
+	if (!scheduleInstance) {
+		scheduleInstance = new Schedule();
+		return { message: "First time", instance: scheduleInstance };
+	} else {
+		return { message: "Not first time", instance: scheduleInstance };
 	}
 }
+
+export default getInstance;
