@@ -7,14 +7,7 @@ import { suscriptionMailer } from "./mail.service.js";
 
 let scheduleInstance;
 class Schedule {
-	constructor() {
-		this.initSchedule();
-	}
-
-	initSchedule() {
-		console.log("schedule initializated");
-		this.task();
-	}
+	constructor() {}
 
 	async task() {
 		try {
@@ -61,20 +54,14 @@ class Schedule {
 			} else {
 				throw new Error("There was an error, the e-mail couldn't be sended.");
 			}
+
+			return { message: "Ok" };
 		} catch (error) {
 			console.log(error.message);
 		}
 	}
 }
 
-function getInstance() {
-	if (!scheduleInstance) {
-		scheduleInstance = new Schedule();
-		return { message: "First time", instance: scheduleInstance };
-	} else {
-		scheduleInstance.task();
-		return { message: "Not first time", instance: scheduleInstance };
-	}
-}
+const instance = new Schedule();
 
-export default getInstance;
+export default instance;
