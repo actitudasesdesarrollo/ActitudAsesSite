@@ -33,7 +33,9 @@ const ArticleBanner = ({ banner_image, title }) => {
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: cover;
-					background-image: url(${banner_image?.url});
+					${banner_image?.url
+						? `background-image: url(${banner_image?.url});`
+						: ""}
 				}
 
 				img {

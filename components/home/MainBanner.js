@@ -59,7 +59,9 @@ const MainBanner = () => {
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: cover;
-					background-image: url(${bannerInfo?.banner?.url});
+					${bannerInfo?.banner?.url
+						? `background-image: url(${bannerInfo?.banner?.url});`
+						: ""}
 				}
 
 				img {
