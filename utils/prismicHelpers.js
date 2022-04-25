@@ -8,7 +8,7 @@ import {
 } from "./prismicConfiguration";
 
 export const customLink = (type, element, content, children, index) => (
-	<Link key={index} href={linkResolver(element.data)}>
+	<Link key={index} href={linkResolver(element?.data)}>
 		<a>{content}</a>
 	</Link>
 );
