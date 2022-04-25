@@ -9,9 +9,9 @@ const Transform = () => {
 
 	useEffect(() => {
 		const getTransformInfo = async () => {
-			const { data } = await Client().getSingle("transform_section");
+			const response = await Client().getSingle("transform_section");
 
-			setTransformInfo(data);
+			setTransformInfo(response?.data);
 		};
 
 		getTransformInfo();

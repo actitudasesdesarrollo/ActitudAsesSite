@@ -8,9 +8,9 @@ const MainBanner = () => {
 
 	useEffect(() => {
 		const getBannerInfo = async () => {
-			const { data } = await Client().getSingle("main_banner");
+			const response = await Client().getSingle("main_banner");
 
-			setBannerInfo(data);
+			setBannerInfo(response?.data);
 		};
 
 		getBannerInfo();
@@ -60,8 +60,8 @@ const MainBanner = () => {
 					background-position: center;
 					background-size: cover;
 					${bannerInfo?.banner?.url
-						? `background-image: url(${bannerInfo?.banner?.url});`
-						: ""}
+					? `background-image: url(${bannerInfo?.banner?.url});`
+					: ""}
 				}
 
 				img {

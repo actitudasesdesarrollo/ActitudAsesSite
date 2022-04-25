@@ -7,11 +7,10 @@ const Why = () => {
 
 	useEffect(() => {
 		const getWhyInfo = async () => {
-			const {
-				data: { body },
-			} = await Client().getSingle("why_section");
 
-			setWhyInfo(body);
+			const response = await Client().getSingle("why_section");
+
+			setWhyInfo(response?.data?.body);
 		};
 
 		getWhyInfo();
