@@ -81,7 +81,7 @@ const Modal = () => {
 			}, 3000);
 			console.log(error);
 		}
-	}, []);
+	}, [toggleIsModalVisible]);
 
 	const closeClickHandle = () => {
 		sessionStorage.setItem("modalClosed", "true");
@@ -139,10 +139,10 @@ const Modal = () => {
 					{isLoading
 						? "Aguarde un momento por favor"
 						: isError
-						? "El correo no pudo enviarse."
-						: isOk
-						? "El correo fue enviado con éxito!"
-						: ""}
+							? "El correo no pudo enviarse."
+							: isOk
+								? "El correo fue enviado con éxito!"
+								: ""}
 				</p>
 			</div>
 			<style jsx>{`

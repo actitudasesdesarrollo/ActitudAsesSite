@@ -21,7 +21,7 @@ const ArticlesPage = () => {
 		};
 
 		getArticle(article);
-	}, []);
+	}, [article]);
 
 	return (
 		<div className="container">
@@ -29,11 +29,10 @@ const ArticlesPage = () => {
 				<title>
 					Actitud Ases
 					{currentArticle?.title
-						? ` - ${
-								Array.isArray(currentArticle?.title)
-									? currentArticle?.title[0].text
-									: currentArticle?.title
-						  }`
+						? ` - ${Array.isArray(currentArticle?.title)
+							? currentArticle?.title[0].text
+							: currentArticle?.title
+						}`
 						: ""}
 				</title>
 			</Head>

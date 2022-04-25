@@ -22,7 +22,7 @@ const ProgramsPage = () => {
 		};
 
 		getProgram(program);
-	}, []);
+	}, [program]);
 
 	return (
 		<div className="container">
