@@ -16,9 +16,9 @@ const ProgramsPage = () => {
 
 	useEffect(() => {
 		const getProgram = async (programToGet) => {
-			const { data } = await Client().getByUID("program", programToGet);
+			const response = await Client().getByUID("program", programToGet);
 
-			setCurrentProgram(data);
+			setCurrentProgram(response?.data);
 		};
 
 		getProgram(program);
