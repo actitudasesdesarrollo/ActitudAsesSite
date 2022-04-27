@@ -92,10 +92,10 @@ const ContactForm = () => {
 				{isLoading
 					? "Aguarde un momento por favor"
 					: isError
-					? "El correo no pudo enviarse."
-					: isOk
-					? "El correo fue enviado con éxito!"
-					: ""}
+						? "El correo no pudo enviarse."
+						: isOk
+							? "El correo fue enviado con éxito!"
+							: ""}
 			</p>
 			<style jsx>{`
 				form {
@@ -167,6 +167,7 @@ const ContactForm = () => {
 
 				@media (max-width: 450px) {
 					form {
+						overflow-x: hidden;
 						gap: 3rem;
 					}
 
