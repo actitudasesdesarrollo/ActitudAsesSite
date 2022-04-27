@@ -16,7 +16,6 @@ const ArticlesPage = () => {
 	useEffect(() => {
 		const getArticle = async (articleToGet) => {
 			const response = await Client().getByUID("article", articleToGet);
-
 			setCurrentArticle(response?.data);
 		};
 

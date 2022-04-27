@@ -23,11 +23,10 @@ const ArticleBody = ({ article, title }) => {
 												listItems = [];
 												return (
 													<div
-														className={`paragraph whiteBackgroundTitle ${
-															paragraph.direction === "rtl"
-																? "textAlignRight"
-																: "textAlignLeft"
-														}`}
+														className={`paragraph whiteBackgroundTitle ${paragraph.direction === "rtl"
+															? "textAlignRight"
+															: "textAlignLeft"
+															}`}
 														key={`paragraph-${index}-${localIndex}`}
 													>
 														<RichText render={[paragraph]} />
@@ -38,16 +37,15 @@ const ArticleBody = ({ article, title }) => {
 												listItems.push(paragraph);
 
 												if (
-													content.paragraph_text[localIndex + 1].type !==
+													content.paragraph_text[localIndex + 1]?.type !==
 													"list-item"
 												) {
 													return (
 														<div
-															className={`list whiteBackgroundTitle ${
-																paragraph.direction === "rtl"
-																	? "textAlignRight"
-																	: "textAlignLeft"
-															}`}
+															className={`list whiteBackgroundTitle ${paragraph.direction === "rtl"
+																? "textAlignRight"
+																: "textAlignLeft"
+																}`}
 															key={`paragraph-${index}-${localIndex}`}
 														>
 															<RichText render={listItems} />
@@ -60,16 +58,15 @@ const ArticleBody = ({ article, title }) => {
 												listItems.push(paragraph);
 
 												if (
-													content.paragraph_text[localIndex + 1].type !==
+													content.paragraph_text[localIndex + 1]?.type !==
 													"o-list-item"
 												) {
 													return (
 														<div
-															className={`list whiteBackgroundTitle ${
-																paragraph.direction === "rtl"
-																	? "textAlignRight"
-																	: "textAlignLeft"
-															}`}
+															className={`list whiteBackgroundTitle ${paragraph.direction === "rtl"
+																? "textAlignRight"
+																: "textAlignLeft"
+																}`}
 															key={`paragraph-${index}-${localIndex}`}
 														>
 															<RichText render={listItems} />
